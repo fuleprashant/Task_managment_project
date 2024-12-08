@@ -4,8 +4,8 @@ import Navbar from "../components/Navbar";
 
 const FirstLayout = () => {
   return (
-    <div className="flex flex-row h-screen bg-slate-800">
-      <div className="hidden md:block w-[220px] bg-red-700 ">
+    <div className="flex flex-row h-screen bg-slate-500">
+      <div className="hidden md:block ">
         <Sidebar />
       </div>
       <div className="flex flex-col flex-1">
