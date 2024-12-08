@@ -1,10 +1,9 @@
-
 const Sidebar = () => {
   return (
     <div>
-      this is the sidebar component
+      <div>Task Managment</div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

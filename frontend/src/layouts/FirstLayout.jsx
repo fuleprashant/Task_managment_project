@@ -1,11 +1,17 @@
 import { Outlet } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
 
 const FirstLayout = () => {
   return (
     <div className="flex flex-row h-screen bg-slate-800">
-      <div className="hidden md:block w-60 bg-red-700">name A</div>
+      <div className="hidden md:block w-[220px] bg-red-700 ">
+        <Sidebar />
+      </div>
       <div className="flex flex-col flex-1">
-        <div className="bg-sky-50 h-16">Name B</div>
+        <div className="bg-sky-50 h-16">
+          <Navbar />
+        </div>
         <div className="bg-purple-600 h-full">
           <Outlet />
         </div>
