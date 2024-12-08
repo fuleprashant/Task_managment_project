@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "this is the mern stack project with advance authentication",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon index.js",
+    "start":"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuleprashant/Task_managment_project.git"
+  },
+  "author": "Prashant Fule",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fuleprashant/Task_managment_project/issues"
+  },
+  "homepage": "https://github.com/fuleprashant/Task_managment_project#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.7"
+  }
+}
