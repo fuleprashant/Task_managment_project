@@ -6,8 +6,8 @@ const app = express();
 const port = 4000;
 
 app.get("/start", (req, res) => {
-    res.send("the server has been start")
-})
+  res.send("the server has been start");
+});
 app.listen(port, () => {
-    console.log(`the server is run on the browser http://localhost:${port}`)
-})
+  console.log(`the server is run on the browser http://localhost:${port}`);
+});

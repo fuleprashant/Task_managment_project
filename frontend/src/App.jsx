@@ -1,6 +1,45 @@
+import {  createBrowserRouter, RouterProvider } from "react-router-dom";
+import FirstLayout from "./layouts/FirstLayout";
+import Home from "./pages/Home";
+import AllTask from "./pages/AllTask";
+import ImportantTask from "./pages/ImportantTask";
+import CompletedTask from "./pages/CompletedTask";
+import Incompleted from "./pages/Incompleted";
 
 const App = () => {
-  return <div className="tet-2xl bg-red-500 text-blue">this is the setup for the frontend and install the react and tailwind css</div>;
+  const router = createBrowserRouter([
+    {
+      path: "",
+      element: <FirstLayout />,
+      children: [
+        {
+          path: "/home",
+          element: <Home />,
+        },
+        {
+          path: "/alltasks",
+          element: <AllTask />,
+        },
+        {
+          path: "/importanttask",
+          element: <ImportantTask />,
+        },
+        {
+          path: "/completetask",
+          element: <CompletedTask />,
+        },
+        {
+          path: "/incompletetask",
+          element: <Incompleted />,
+        },
+      ],
+    },
+  ]);
+  return (
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  );
 };
 
 export default App;
