@@ -1,10 +1,118 @@
+import { useState } from "react";
+import { CiHome } from "react-icons/ci";
+import { FaStarHalfAlt } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
+import { GrMenu, GrClose } from "react-icons/gr";
+import {
+  MdIncompleteCircle,
+  MdOutlineLabelImportant,
+  MdTask,
+} from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  return (
-    <div>
-      This is the Navbar components
-    </div>
-  )
-}
+  const [userData, setUserData] = useState({
+    name: "John Doe",
+    email: "johndoe@example.com",
+    avatar: "https://example.com/avatar.jpg",
+  });
 
-export default Navbar
+  const [popup, setPopup] = useState(false);
+
+  const handleClick = () => {
+    setPopup(!popup);
+  };
+
+  const data = [
+    {
+      title: "Home",
+      path: "/home",
+      icon: <CiHome />,
+    },
+    {
+      title: "All Tasks",
+      path: "/alltasks",
+      icon: <MdTask />,
+    },
+    {
+      title: "Important Task",
+      path: "/importanttask",
+      icon: <MdOutlineLabelImportant />,
+    },
+    {
+      title: "Completed Task",
+      path: "/completetask",
+      icon: <MdIncompleteCircle />,
+    },
+    {
+      title: "Incompleted Task",
+      path: "/incompletetask",
+      icon: <FaStarHalfAlt />,
+    },
+  ];
+
+  return (
+    <div className="p-3 bg-gray-100">
+      <div className="flex  sm:flex-row items-center justify-between gap-4">
+        {/* App Title */}
+        <div className="block sm:hidden ">
+          <button onClick={handleClick}>
+            {!popup ? <GrMenu size={30} /> : <GrClose size={30} />}
+          </button>
+
+          {popup && (
+            <div
+              className={`fixed top-[64px] left-0 h-full w-60 bg-slate-500 shadow-lg transform ${
+                popup ? "translate-x-0" : "-translate-x-full"
+              } transition-transform duration-300 ease-in-out z-50`}
+            >
+              <div className="p-5 flex flex-col h-full">
+                <nav className="flex-1">
+                  {data.map((ele, idx) => (
+                    <div key={idx} className="hover:bg-slate-600">
+                      <NavLink to={ele.path}>
+                        <div className=" flex items-center flex-row gap-2 ml-4 p-2  ">
+                          <div size={24}>{ele.icon}</div>
+                          {popup && (
+                            <h1 className="text-[20px]">{ele.title}</h1>
+                          )}
+                        </div>
+                      </NavLink>
+                    </div>
+                  ))}
+                </nav>
+                <div className="hover:bg-slate-600  mb-12">
+                  <div className=" ml-5   font-bold  w-full">
+                    <div className=" ">
+                      <div className=" p-3 flex gap-5 font-bold  ">
+                        <FiLogOut size={30} />
+                        {popup && <div className="text-2xl">Logout</div>}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="hidden sm:block text-2xl sm:text-3xl font-semibold text-center sm:text-left">
+          This is the task management web application
+        </div>
+        {/* User Profile */}
+        <div className="flex items-center gap-3 sm:gap-5">
+          <div className="text-black text-sm sm:text-lg">
+            <div className="font-medium">{userData.name}</div>
+            <div className="text-xs sm:text-sm">{userData.email}</div>
+          </div>
+          <img
+            src={userData.avatar}
+            alt="Profile"
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
