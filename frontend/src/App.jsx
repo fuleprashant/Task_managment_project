@@ -5,6 +5,8 @@ import AllTask from "./pages/AllTask";
 import ImportantTask from "./pages/ImportantTask";
 import CompletedTask from "./pages/CompletedTask";
 import Incompleted from "./pages/Incompleted";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -33,6 +35,14 @@ const App = () => {
           element: <Incompleted />,
         },
       ],
+    },
+    {
+      path: "/signup",
+      element: <SignUp />,
+    },
+    {
+      path: "/signin",
+      element: <SignIn />,
     },
   ]);
   return (
