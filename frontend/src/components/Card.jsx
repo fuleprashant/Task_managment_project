@@ -3,10 +3,11 @@ import { IoMdAdd } from "react-icons/io";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { IoHeartSharp } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ Adddata }) => {
   const [isCompleted, setIsCompleted] = useState(false);
-
+  const navigate = useNavigate();
   const data = [
     {
       title: "Frontend",
@@ -81,7 +82,10 @@ const Card = ({ Adddata }) => {
 
         {/* Add Task Card */}
         {Adddata === "true" && (
-          <div className="bg-white shadow-lg rounded-lg p-6 flex justify-center items-center gap-5 cursor-pointer hover:bg-gray-200 transition-all">
+          <div
+            className="bg-white shadow-lg rounded-lg p-6 flex justify-center items-center gap-5 cursor-pointer hover:bg-gray-200 transition-all"
+            onClick={() => navigate("/addtask")}
+          >
             <h2 className="text-3xl font-semibold text-gray-800">Add Task</h2>
             <IoMdAdd size={36} />
           </div>
