@@ -4,7 +4,7 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { IoHeartSharp } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 
-const Card = () => {
+const Card = ({ Adddata }) => {
   const [isCompleted, setIsCompleted] = useState(false);
 
   const data = [
@@ -80,10 +80,12 @@ const Card = () => {
         ))}
 
         {/* Add Task Card */}
-        <div className="bg-white shadow-lg rounded-lg p-6 flex justify-center items-center gap-5 cursor-pointer hover:bg-gray-200 transition-all">
-          <h2 className="text-3xl font-semibold text-gray-800">Add Task</h2>
-          <IoMdAdd size={36} />
-        </div>
+        {Adddata === "true" && (
+          <div className="bg-white shadow-lg rounded-lg p-6 flex justify-center items-center gap-5 cursor-pointer hover:bg-gray-200 transition-all">
+            <h2 className="text-3xl font-semibold text-gray-800">Add Task</h2>
+            <IoMdAdd size={36} />
+          </div>
+        )}
       </div>
     </div>
   );

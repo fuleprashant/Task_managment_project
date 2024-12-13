@@ -1,5 +1,11 @@
+import Card from "../components/Card";
+
 const CompletedTask = () => {
-  return <div>This is the CompletedTask component</div>;
+  return (
+    <div>
+      <Card Adddata="false" />
+    </div>
+  );
 };
 
 export default CompletedTask;

@@ -1,5 +1,11 @@
+import Card from "../components/Card";
+
 const Incompleted = () => {
-  return <div>This is the Incompleted component</div>;
+  return (
+    <div>
+      <Card Adddata="false" />
+    </div>
+  );
 };
 
 export default Incompleted;
