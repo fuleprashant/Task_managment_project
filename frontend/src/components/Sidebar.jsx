@@ -44,23 +44,23 @@ const Sidebar = () => {
 
   return (
     <div
-      className={` flex flex-col justify-between h-screen ${
+      className={` flex flex-col  justify-between h-screen  ${
         popup ? "w-[250px]" : "w-[70px]"
       }
 `}
     >
       <div>
-        <div className="flex justify-between">
-          {popup && <div className="p-2 text-2xl">Tasks</div>}
-          <div className="text-3xl p-3" onClick={handlePopup}>
+        <div className="flex justify-between ">
+          {popup && <div className="p-4 text-2xl font-bold">Tasks</div>}
+          <div className="text-3xl p-4" onClick={handlePopup}>
             <BiAlignRight />
           </div>
         </div>
-        <hr className="border-black text-2xl" />
+        <hr className="border-black text-2xl mt-[13px] " />
       </div>
       <div className="space-y-5 font-bold  w-full ">
         {data.map((ele, idx) => (
-          <div key={idx} className="hover:bg-slate-600">
+          <div key={idx} className="hover:bg-slate-100">
             <NavLink to={ele.path}>
               <div className="text-3xl flex gap-2 ml-4 p-2  ">
                 <div size={24}>{ele.icon}</div>
