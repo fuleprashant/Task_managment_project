@@ -7,6 +7,7 @@ import CompletedTask from "./pages/CompletedTask";
 import Incompleted from "./pages/Incompleted";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import AddTask from "./components/AddTask";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const App = () => {
         {
           path: "/alltasks",
           element: <AllTask />,
+        },
+        {
+          path: "/addtask",
+          element: <AddTask />,
         },
         {
           path: "/importanttask",
